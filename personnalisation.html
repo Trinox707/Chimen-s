@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montres Personnalisées - CHIMEN'S</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            padding: 50px;
+        }
+        .custom-watch {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .form-group {
+            margin: 15px 0;
+        }
+        select, input {
+            padding: 10px;
+            width: 100%;
+            max-width: 400px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Montres Personnalisées</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="collection.html">Collection</a></li>
+                <li><a href="personnalisation.html">Montres Personnalisées</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="container">
+        <div class="custom-watch">
+            <h2>Créez votre propre montre</h2>
+            <p>Personnalisez votre montre avec nos options uniques.</p>
+            <form id="custom-watch-form">
+                <div class="form-group">
+                    <label for="model">Modèle :</label>
+                    <select id="model">
+                        <option value="NLA">𝙼𝚘𝚍𝚎̀𝚕𝚎 𝒩𝐿𝒜</option>
+                        <option value="Orion">𝙼𝚘𝚍𝚎̀𝚕𝚎 𝙾𝚛𝚒𝚘𝚗</option>
+                        <option value="Astralis">𝙼𝚘𝚍𝚎̀𝚕𝚎 𝙰𝚜𝚝𝚛𝚊𝚕𝚒𝚜</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="engraving">Gravure personnalisée :</label>
+                    <input type="text" id="engraving" placeholder="Votre texte (ex : Initiales, message court)">
+                </div>
+                <div class="form-group">
+                    <label for="strap">Type de bracelet :</label>
+                    <select id="strap">
+                        <option value="cuir">Cuir</option>
+                        <option value="acier">Acier</option>
+                        <option value="silicone">Silicone</option>
+                    </select>
+                </div>
+                <a href="#" class="button">Valider la personnalisation</a>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
