@@ -1,0 +1,61 @@
+<!-- admin.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin CHIMEN'S</title>
+</head>
+<body>
+  <h1>Panneau d'administration CHIMEN'S</h1>
+
+  <form id="addWatchForm">
+    <input type="text" id="name" placeholder="Nom de la montre" required />
+    <input type="text" id="price" placeholder="Prix" required />
+    <input type="text" id="image" placeholder="URL de l'image" required />
+    <button type="submit">Ajouter la montre</button>
+  </form>
+
+  <p id="status"></p>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyA6tmVSMOLmPbK2-m4T26hN5QkHJ6mA0YE",
+      authDomain: "chimens-site.firebaseapp.com",
+      projectId: "chimens-site",
+      storageBucket: "chimens-site.firebasestorage.app",
+      messagingSenderId: "169785383387",
+      appId: "1:169785383387:web:864c1d76143fb84263affe",
+      measurementId: "G-2X0501KJNB"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const form = document.getElementById('addWatchForm');
+    const status = document.getElementById('status');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const price = document.getElementById('price').value;
+      const image = document.getElementById('image').value;
+
+      try {
+        await addDoc(collection(db, "montres"), {
+          name,
+          price,
+          image
+        });
+        status.textContent = "✅ Montre ajoutée avec succès !";
+        form.reset();
+      } catch (error) {
+        console.error("Erreur :", error);
+        status.textContent = "❌ Erreur lors de l'ajout.";
+      }
+    });
+  </script>
+</body>
+</html>
